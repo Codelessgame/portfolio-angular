@@ -2,7 +2,7 @@
   --color-light: #e0d9cf;
   --dark: #1e1f26;
 
-  --color-dark: rgba(64, 65, 60, 0.77);
+  --grayish: rgba(64, 65, 60, 0.77);
   --text-on-dark: #ffffff;
 
   --color-cyan: rgba(3, 218, 198, 0.76);
@@ -32,7 +32,7 @@ a {
 body {
   margin: 0;
   font-size: x-large;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "monospace", sans-serif;
   place-items: center;
 }
 
