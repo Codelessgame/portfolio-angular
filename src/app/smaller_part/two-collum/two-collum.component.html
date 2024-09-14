@@ -1,9 +1,11 @@
-<mat-grid-list cols="2">
-  <mat-grid-tile>
-    <img src="./app/home/jpg/art_img.jpg">
-  </mat-grid-tile>
+@for (tile of tiles; track tile) {
+    <div *ngIf="tile.side=='left'" class="smol-css-grid">
+        <img class="image" mat-card-image [src]="tile.image">
+        <p>{{tile.text}}</p>
+    </div>
 
-  <mat-grid-tile m>
-    <img src="./app/home/jpg/art_img.jpg">
-  </mat-grid-tile>
-</mat-grid-list>
+  <div *ngIf="tile.side=='right'"    class="smol-css-grid">
+    <p>{{tile.text}}</p>
+    <img class="image" mat-card-image [src]="tile.image">
+  </div>
+}

@@ -1,9 +1,9 @@
+
 <section class="nav">
   <h1 (mouseover)="startAnimation()">{{currentValue}}</h1>
-
-  <mat-toolbar class="nav-container" color="primary">
-    <a class="nav-tab" routerLink="">Home</a>
-    <a class="nav-tab " routerLink="blog">Blog</a>
-
-  </mat-toolbar>
 </section>
+
+<mat-toolbar class="sticky" >
+  <button mat-button routerLink="">Home</button>
+  <button mat-button routerLink="blog">Blog</button>
+</mat-toolbar>

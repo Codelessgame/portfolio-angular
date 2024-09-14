@@ -1,3 +1,12 @@
+mat-toolbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+
+}
 
 
 .nav{
@@ -7,7 +16,7 @@
   align-items: center;
   height: 100vh;
   position: relative;
-  background-color: #1e1f26;
+  background-color: var(--mat-app-background-color);
   text-align: center;
   padding: 0 2em;
 }
@@ -27,17 +36,6 @@ h1 {
   padding: 0 clamp(1rem, 2vw, 3rem);
 
 }
-h1:hover {
-  padding: 3vw;
-
-  color: #ff0266;
-  background-color: rgba(255, 255, 255, 0.81);
-  border-radius: 5px;
-}
-
-a {
-  text-decoration: none;
-}
 
 .nav-container {
   display: flex;
@@ -49,39 +47,6 @@ a {
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   background: #1e1f26;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-
-
-.nav-tab {
-  height: 75px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  color: #03dac6;
-  letter-spacing: 0.1rem;
-  transition: all 0.5s ease;
-  font-size: 3vw;
-}
-
-.nav-tab:hover {
-  background: var(--grayish);
-}
-.nav-tab:active{
-  transition: 0.1s;
-  background: var(--color-light);
-}
-
-
-
-
-.background {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 @media screen and (max-width: 1000px){

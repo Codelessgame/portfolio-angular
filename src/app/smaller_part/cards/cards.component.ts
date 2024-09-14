@@ -1,9 +1,19 @@
 import {Component, Input} from '@angular/core';
+import {MatCard, MatCardContent, MatCardFooter, MatCardImage, MatCardTitle} from "@angular/material/card";
+import {MatGridList} from "@angular/material/grid-list";
 
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   standalone: true,
+  imports: [
+    MatCard,
+    MatCardTitle,
+    MatGridList,
+    MatCardFooter,
+    MatCardContent,
+    MatCardImage
+  ],
   styleUrls: ['./cards.component.scss']
 })
 
@@ -16,4 +26,5 @@ export class CardsComponent {
   @Input() url_3: string = ''
 
   protected readonly createImageBitmap = createImageBitmap;
+  protected readonly name = name;
 }

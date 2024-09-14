@@ -1,155 +1,35 @@
-.cards-container{
+.container {
+
+  padding: 5rem;
+  --min: 30ch;
+  --gap: 2rem;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--gap);
+  /* min() with 100% prevents overflow
+  in extra narrow spaces */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
-.screen{
-  margin: 0 auto;
-  width: 25vw;
-  aspect-ratio: 9/16;
-  border: 3px solid;
-  border-radius: 10px;
-  background-color: #1e1f26;
+mat-card{
   overflow: hidden;
-  position: relative;
-  z-index: 10;
+  aspect-ratio: 10 / 12;
 }
 
 @keyframes pan-overlay {
   from {
-    background-position: 0 0;
+    background-position: 0% 0%;
   }
+
   to {
-    background-position: 0 -100%;
-  }
-}
-.screen-overlay{
-  background: linear-gradient(
-      var(--color-line),
-      var(--color-primary) 1px,
-      transparent 3px,
-      transparent 9px
-  );
-  background-size: 100% 9px;
-  height: 100%;
-  width: 25vw;
-  animation: pan-overlay 22s infinite linear;
-  position: absolute;
-  z-index: 2 ;
-
-}
-@keyframes pan-image {
-  0% {
-    background-position: 36% 42%;
-    background-size: 200%;
-  }
-
-  20% {
-    background-position: 30% 35%;
-    background-size: 200%;
-  }
-
-  20.0001% { /* -- View 2 -- */
-    background-position: 60% 85%;
-    background-size: 500%;
-  }
-
-  40% {
-    background-position: 49% 81%;
-    background-size: 500%;
-  }
-
-  40.0001% { /* -- View 3 -- */
-    background-position: 80% 42%;
-    background-size: 300%;
-  }
-
-  60% {
-    background-position: 84% 33%;
-    background-size: 300%;
-  }
-
-  60.0001% { /* -- View 4 -- */
-    background-position: 0 0;
-    background-size: 300%;
-  }
-
-  80% {
-    background-position: 15% 4%;
-    background-size: 300%;
-  }
-
-  80.0001% { /* -- View 5 -- */
-    background-position: 80% 10%;
-    background-size: 300%;
-  }
-
-  100% {
-    background-position: 72% 14%;
-    background-size: 300%;
+    background-position: 0% -100%;
   }
 }
 
-.screen > .screen-image {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  background-size: 200%;
-  background-position: 0 0;
-  filter: sepia(100%) hue-rotate(160deg);
-  opacity: 0.6;
-  animation: pan-image 15s linear infinite;
-}
-
-.screen > .screen-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  flex-grow: 1;
-  gap: 4rem;
+mat-card-title{
+  align-self: center;
   position: relative;
-  top: 45%;
-  z-index: 3;
-  margin: 1rem;
-  padding-bottom: 6rem;
-  border: 1px solid var(--text-on-dark)/50%;
-  border-radius: 0.6rem;
-}
-
-.screen > .screen-content > .screen-user > :is(.name, .link) {
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.screen > .screen-content > .screen-user > .name {
-  position: relative;
-  font-size: 4.25vw;
-  font-weight: 400;
-}
-
-.screen:hover .screen-overlay {
-  transition: 0.5s;
-  animation: none; /* Stop the animation on hover */
-  background:none;
-}
-
-.screen:hover .screen-image {
-  transition: 0.35s;
-  filter: none; /* Remove the sepia and hue-rotate filter on hover */
-  opacity: 1; /* Make the image fully visible on hover */
-}
-
-.title{
-  font-family: "monospace", sans-serif;
-  font-size: 3vw;
-  position: absolute;
   top: 50%;
-  left: 11.5vw;
   z-index: 1;
-  color: white;
+  color: aliceblue;
 }

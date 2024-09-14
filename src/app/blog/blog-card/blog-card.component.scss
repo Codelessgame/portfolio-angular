@@ -1,24 +1,12 @@
-.example-card {
-  max-width: 400px;
-}
+.container {
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
+    padding: 1rem;
+    --min: 30ch;
+    --gap: 2rem;
 
-.card-tag {
-  padding: 16px;
-}
-
-.border{
-  padding: 0.25rem 0;
-}
-
-.card-footer{
-  padding: 0.5rem 1rem;
-}
-.container{
-  padding: 1rem 2vw;
-
+    display: grid;
+    grid-gap: var(--gap);
+    /* min() with 100% prevents overflow
+    in extra narrow spaces */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }

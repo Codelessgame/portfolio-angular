@@ -1,8 +1,10 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatToolbar} from "@angular/material/toolbar";
-import {MatAnchor} from "@angular/material/button";
+import {MatAnchor, MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import {MatButtonToggle} from "@angular/material/button-toggle";
+import {MatTabNav, MatTabNavPanel} from "@angular/material/tabs";
 
 const letters = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYZŽ0123456789"
 
@@ -15,7 +17,11 @@ const letters = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYZŽ012345678
     MatListItem,
     MatToolbar,
     MatAnchor,
-    RouterLink
+    RouterLink,
+    MatButtonToggle,
+    MatButton,
+    MatTabNav,
+    MatTabNavPanel
   ],
   standalone: true
 })

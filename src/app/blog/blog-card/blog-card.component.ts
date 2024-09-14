@@ -1,6 +1,8 @@
 import { Component  } from '@angular/core';
 import {CommonModule, NgForOf, NgOptimizedImage} from "@angular/common";
-import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardImage, MatCardTitle, MatCardSubtitle} from "@angular/material/card";
+import {
+  MatCardModule
+} from "@angular/material/card";
 import {MatChip, MatChipSet} from "@angular/material/chips";
 import {MatButton} from "@angular/material/button";
 import {Tag} from "../tag";
@@ -10,16 +12,10 @@ import {MatGridList, MatGridTile} from "@angular/material/grid-list";
   selector: 'app-blog-card',
   standalone: true,
   imports: [
-    MatCardSubtitle,
-    MatCardTitle,
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardActions,
+    MatCardModule,
     MatChip,
     MatChipSet,
     MatButton,
-    MatCardImage,
     NgForOf,
     NgOptimizedImage,
     MatGridTile,

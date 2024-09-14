@@ -1,0 +1,14 @@
+.smol-css-grid {
+  padding: 5vh 10vw;
+  --min: 20ch;
+  --gap: 1rem;
+
+  display: grid;
+  justify-items: center;
+  text-align: justify-all;
+  grid-gap: var(--gap);
+  /* min() with 100% prevents overflow
+  in extra narrow spaces */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
