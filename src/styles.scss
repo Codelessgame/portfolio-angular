@@ -10,6 +10,18 @@ $theme: mat.define-theme(
     )
 );
 
+
+.color{
+  background: var(--mat-app-background-color);
+
+
+}
+
+.padding{
+  padding: 2em 10vw;
+}
+
+
 html, body {
   height: 100%;
 }
