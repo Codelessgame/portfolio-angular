@@ -18,13 +18,17 @@ import {MatGridList} from "@angular/material/grid-list";
 })
 
 export class CardsComponent {
-  @Input() backgroundImage1 = ''
-  @Input() backgroundImage2 = ''
-  @Input() backgroundImage3 = ''
-  @Input() url_1: string = ''
-  @Input() url_2: string = ''
-  @Input() url_3: string = ''
+  tiles: TilesData[] = [
+    { title:"TITLE", link:"", image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s"},
+    { title:"TITLE", link:"", image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s"}
 
-  protected readonly createImageBitmap = createImageBitmap;
-  protected readonly name = name;
+  ]
+
+
+}
+
+export interface TilesData {
+  link: string;
+  title: string;
+  image_url:string
 }

@@ -1,5 +1,5 @@
 .smol-css-grid {
-  --min: 20ch;
+  --min: 25ch;
   --gap: 1rem;
 
   display: grid;
@@ -11,3 +11,6 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
+h2{
+  text-align: center;
+}

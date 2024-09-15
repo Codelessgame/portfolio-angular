@@ -13,6 +13,7 @@
 mat-card{
   overflow: hidden;
   aspect-ratio: 10 / 12;
+
 }
 
 @keyframes pan-overlay {
@@ -30,5 +31,5 @@ mat-card-title{
   position: relative;
   top: 50%;
   z-index: 1;
-  color: aliceblue;
+  color: var(--cyan);
 }

@@ -35,8 +35,8 @@ import {NgIf} from "@angular/common";
 
 export class TwoCollumComponent {
   tiles: TilesData[] = [
-    {id: 1, side: 'left', text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dapibus leo. Nam nec orci semper, auctor dui nec, finibus augue. Integer ac pellentesque arcu, sed finibus libero. Nullam euismod dui nec imperdiet fringilla. Quisque rhoncus lorem at velit vehicula elementum. Quisque a dictum quam, quis tincidunt felis. Morbi pulvinar nisl id euismod egestas. Praesent metus enim, venenatis at erat vel, mollis facilisis lectus. Fusce vulputate non dui ut venenatis. Nunc a tortor mi. Phasellus posuere orci quis mauris varius, ac scelerisque nunc vehicula.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s\""},
-    {id: 1, side: 'right', text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dapibus leo. Nam nec orci semper, auctor dui nec, finibus augue. Integer ac pellentesque arcu, sed finibus libero. Nullam euismod dui nec imperdiet fringilla. Quisque rhoncus lorem at velit vehicula elementum. Quisque a dictum quam, quis tincidunt felis. Morbi pulvinar nisl id euismod egestas. Praesent metus enim, venenatis at erat vel, mollis facilisis lectus. Fusce vulputate non dui ut venenatis. Nunc a tortor mi. Phasellus posuere orci quis mauris varius, ac scelerisque nunc vehicula.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s\""}
+    {id: 1, side: 'left', title:"TITLE", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dapibus leo. Nam nec orci semper, auctor dui nec, finibus augue. Integer ac pellentesque arcu, sed finibus libero. Nullam euismod dui nec imperdiet fringilla. Quisque rhoncus lorem at velit vehicula elementum. Quisque a dictum quam, quis tincidunt felis. Morbi pulvinar nisl id euismod egestas. Praesent metus enim, venenatis at erat vel, mollis facilisis lectus. Fusce vulputate non dui ut venenatis. Nunc a tortor mi. Phasellus posuere orci quis mauris varius, ac scelerisque nunc vehicula.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s\""},
+    {id: 1, side: 'right', title:"TITLE", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dapibus leo. Nam nec orci semper, auctor dui nec, finibus augue. Integer ac pellentesque arcu, sed finibus libero. Nullam euismod dui nec imperdiet fringilla. Quisque rhoncus lorem at velit vehicula elementum. Quisque a dictum quam, quis tincidunt felis. Morbi pulvinar nisl id euismod egestas. Praesent metus enim, venenatis at erat vel, mollis facilisis lectus. Fusce vulputate non dui ut venenatis. Nunc a tortor mi. Phasellus posuere orci quis mauris varius, ac scelerisque nunc vehicula.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s\""}
 
   ]
 
@@ -44,6 +44,7 @@ export class TwoCollumComponent {
 }
 
 export interface TilesData {
+  title: string;
   side: 'left' | 'right' ;
 
   id: number
