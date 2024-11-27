@@ -1,12 +1,12 @@
-import {Tag} from "./tag";
+import {BlogTag} from "./blog-tag";
 
-export interface BlogCardData {
+export interface BlogPostData {
 
   id: number
 
   date?: string
   link?: string
-  tags: Tag[]
+  tags: BlogTag[]
 
   title: string
   subtitle: string

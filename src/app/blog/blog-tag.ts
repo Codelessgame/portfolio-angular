@@ -1,4 +1,4 @@
-export const enum Tag {
+export const enum BlogTag {
     PHYSICS = 'physics',
     ART = 'art',
     SCHOOL = 'school',

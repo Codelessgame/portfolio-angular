@@ -9,3 +9,17 @@
     in extra narrow spaces */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
+
+.sort{
+  padding:1em 0 ;
+
+}
+
+.flex{
+  display: flex;
+  padding: 2em ;
+
+}
+.chip{
+   padding: 1rem;
+}

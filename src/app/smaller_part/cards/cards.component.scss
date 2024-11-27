@@ -16,20 +16,53 @@ mat-card{
 
 }
 
-@keyframes pan-overlay {
-  from {
-    background-position: 0% 0%;
-  }
-
-  to {
-    background-position: 0% -100%;
-  }
-}
-
 mat-card-title{
+  text-underline: none ;
+  text-decoration: none;
   align-self: center;
   position: relative;
+  font-family: "monospace", sans-serif;
+  font-size: 3vw;
   top: 50%;
-  z-index: 1;
-  color: var(--cyan);
+  z-index: 5;
+  color: white;
+}
+
+.hue-shifted{
+  z-index: 4;
+  left: 0;
+  top: 0;
+  background-position: 0 0;
+  filter: sepia(100%) hue-rotate(160deg);
+  opacity: 0.8;
+}
+
+.hue-shifted:hover{
+  transition: 0.5s;
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes pan-overlay {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -100%;
+  }
+}
+.screen-overlay {
+  //opacity: 0.4;
+  background: linear-gradient(
+      var(--light-cyan),
+      var(--light-cyan) 1px,
+      transparent 1px,
+      transparent 40px
+  );
+  background-size: 100% 12px;
+  height: 100%;
+  width: 40vw;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
 }

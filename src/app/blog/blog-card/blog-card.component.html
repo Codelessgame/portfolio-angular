@@ -1,23 +1,28 @@
-<div class=" padding color">
-  <div>Sort by:(not completed)</div>
+<div  class=" padding color" *ngIf="selection$ | async; let selection">
+<!--  filtering shown what you are filtering-->
+  <div *ngIf="selection.length > 0" class="flex">
+    <h1 class="cyan">Sorted by: </h1>
+    <div *ngFor="let tag of selection" (click)="toggleTagged($event, tag)">
+      <mat-chip class="chip" (click)="toggleTagged($event, tag)">{{tag}}</mat-chip>
+    </div>
+  </div>
 
-  <div class="container">
-    @for (card of posts; track card.id) {
-        <mat-card appearance="outlined">
+<!--  this is the blog cars listing, from here filter event called-->
+  <div *ngIf=" posts$ | async; let post" class="container">
+        <mat-card *ngFor="let postData of posts$ | async" appearance="outlined">
           <mat-card-header>
-            <mat-card-title>{{ card.title }}</mat-card-title>
-            <mat-card-subtitle>{{ card.subtitle }}</mat-card-subtitle>
+            <mat-card-title ><a href="/" class="cyan">{{ postData.title }}</a></mat-card-title>
+            <mat-card-subtitle *ngIf="postData.subtitle =='hi' ">{{ postData.subtitle }}</mat-card-subtitle>
           </mat-card-header>
-  <!--        <img mat-card-image [src]="card.image" [alt]="card.title">-->
+           <img mat-card-image [src]="postData.image" [alt]="'failed to load' + postData.title">
           <mat-card-content>
             <mat-chip-set class="card-footer">
-              @for (tag of card.tags; track tag) {
-                <mat-chip>{{tag}}</mat-chip>
+              @for (tag of postData.tags; track tag) {
+                <mat-chip  (click)="toggleTagged($event, tag)">{{tag}}</mat-chip>
               }
             </mat-chip-set>
-            {{card.content}}
+            {{postData.content}}
           </mat-card-content>
         </mat-card>
-    }
   </div>
 </div>
