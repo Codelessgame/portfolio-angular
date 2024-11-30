@@ -8,10 +8,11 @@ import {distinctUntilChanged, map, Observable} from "rxjs";
 
 
 import {MatCardModule} from "@angular/material/card";
-import {MatChip, MatChipSet} from "@angular/material/chips";
+import {MatChip, MatChipGrid, MatChipRow, MatChipSet} from "@angular/material/chips";
 import {MatButton} from "@angular/material/button";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
 import {BlogTag} from "../blog-tag";
+import {MatIcon} from "@angular/material/icon";
 
 
 @Component({
@@ -28,6 +29,9 @@ import {BlogTag} from "../blog-tag";
     MatGridList,
     AsyncPipe,
     NgIf,
+    MatChipGrid,
+    MatChipRow,
+    MatIcon,
   ],
   templateUrl: './blog-card.component.html',
   styleUrl: './blog-card.component.scss'
@@ -48,10 +52,7 @@ export class BlogCardComponent {
     private blogService: BlogService
   ) { }
 
-  toggleTagged(event: MouseEvent, tag: BlogTag): void {
-    event.preventDefault();
-    event.stopPropagation();
-
+  toggleTagged( tag: BlogTag): void {
     this.blogService.toggleSelectionTag(tag);
   }
 

@@ -1,68 +1,83 @@
+/* Container Grid */
 .container {
-
+  padding: 0 10vw;
   --min: 30ch;
   --gap: 2rem;
-
   display: grid;
   grid-gap: var(--gap);
-  /* min() with 100% prevents overflow
-  in extra narrow spaces */
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
-mat-card{
+/* Card Styling */
+mat-card {
   overflow: hidden;
   aspect-ratio: 10 / 12;
-
-}
-
-mat-card-title{
-  text-underline: none ;
-  text-decoration: none;
-  align-self: center;
   position: relative;
-  font-family: "monospace", sans-serif;
-  font-size: 3vw;
-  top: 50%;
-  z-index: 5;
-  color: white;
+  background: #1a1a1a;
+  transition: transform 0.3s ease-in-out;
 }
 
-.hue-shifted{
-  z-index: 4;
-  left: 0;
+.card:hover mat-card {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
+}
+
+/* Glitchy Image Pieces */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.layer {
+  position: absolute;
   top: 0;
-  background-position: 0 0;
-  filter: sepia(100%) hue-rotate(160deg);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.layer-1 {
+  z-index: 1;
+}
+
+.layer-2 {
+  z-index: 3;
   opacity: 0.8;
 }
 
-.hue-shifted:hover{
-  transition: 0.5s;
-  filter: none;
-  opacity: 1;
+.layer-3 {
+  z-index: 2;
+  opacity: 0.6;
 }
 
-@keyframes pan-overlay {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 -100%;
-  }
+/* Hover Effect */
+.card:hover .layer-1 {
+  transform: translate(30px, 50px);
 }
-.screen-overlay {
-  //opacity: 0.4;
-  background: linear-gradient(
-      var(--light-cyan),
-      var(--light-cyan) 1px,
-      transparent 1px,
-      transparent 40px
-  );
-  background-size: 100% 12px;
-  height: 100%;
-  width: 40vw;
-  animation: pan-overlay 22s infinite linear;
+
+.card:hover .layer-2 {
+  transform: translate(15px, 5px) rotate(3deg);
+}
+
+.card:hover .layer-3 {
+  transform: translate(-5px, 10px) rotate(-5deg);
+}
+/* Title Styling (Initially Hidden) */
+mat-card-title {
   position: absolute;
-  z-index: 2;
+  bottom: 50%;
+  left: 50%;
+  color: var(--cyan);
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2vw;
+  border-radius: 1vw;
+  font-size: 3vw;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 4;
 }

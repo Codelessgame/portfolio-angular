@@ -3,11 +3,15 @@
   <div class="container ">
 
     @for (tile of tiles; track tile) {
-      <a href="{{tile.link}}">
+      <a class="card" href="{{tile.link}}">
         <mat-card appearance="outlined">
           <div class="screen-overlay"></div>
           <mat-card-title>{{tile.title}}</mat-card-title>
-          <img class="hue-shifted" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s" alt="{{tile.title}} image">
+          <div class="image-container">
+            <img class="hue-shifted layer layer-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s" alt="Project 1 image">
+            <img class="hue-shifted layer layer-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s" alt="Project 1 image">
+            <img class="hue-shifted layer layer-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s" alt="Project 1 image">
+          </div>
         </mat-card >
       </a>
     }

@@ -2,8 +2,12 @@
 <!--  filtering shown what you are filtering-->
   <div *ngIf="selection.length > 0" class="flex">
     <h1 class="cyan">Sorted by: </h1>
-    <div *ngFor="let tag of selection" (click)="toggleTagged($event, tag)">
-      <mat-chip class="chip" (click)="toggleTagged($event, tag)">{{tag}}</mat-chip>
+    <div class="chips-wrapper">
+      <div class="chip-wrapper" *ngFor="let tag of selection" (click)="toggleTagged(tag)">
+        <mat-chip class="chip" (removed)="toggleTagged(tag)">
+          {{ tag }}
+        </mat-chip>
+      </div>
     </div>
   </div>
 
@@ -14,11 +18,11 @@
             <mat-card-title ><a href="/" class="cyan">{{ postData.title }}</a></mat-card-title>
             <mat-card-subtitle *ngIf="postData.subtitle =='hi' ">{{ postData.subtitle }}</mat-card-subtitle>
           </mat-card-header>
-           <img mat-card-image [src]="postData.image" [alt]="'failed to load' + postData.title">
+           <img mat-card-image [src]="postData.image " [alt]="'failed to load' + postData.title">
           <mat-card-content>
             <mat-chip-set class="card-footer">
               @for (tag of postData.tags; track tag) {
-                <mat-chip  (click)="toggleTagged($event, tag)">{{tag}}</mat-chip>
+                <mat-chip  (click)="toggleTagged( tag)">{{tag}}</mat-chip>
               }
             </mat-chip-set>
             {{postData.content}}

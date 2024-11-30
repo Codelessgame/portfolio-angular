@@ -15,11 +15,51 @@
 
 }
 
-.flex{
+/* Flex Container */
+.flex {
   display: flex;
-  padding: 2em ;
-
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem; /* Adds space between elements */
 }
-.chip{
-   padding: 1rem;
+
+/* Chips Container */
+.chips-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.chips-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Ensures chips wrap instead of overflowing */
+  gap: 0.5rem; /* Space between chips */
+  max-width: 100%;
+}
+
+.chip-wrapper {
+  flex: 0 1 auto; /* Allows flexibility for wrapping */
+  display: flex;
+}
+
+/* Mat Chip Styling */
+mat-chip {
+  padding: 0.5vh;
+  display: inline-flex;
+}
+
+
+mat-chip[removed] {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .chips-wrapper {
+    justify-content: center; /* Center-align chips on smaller screens */
+  }
+
+  mat-chip {
+    font-size: 0.75rem; /* Smaller chips for small screens */
+  }
 }
