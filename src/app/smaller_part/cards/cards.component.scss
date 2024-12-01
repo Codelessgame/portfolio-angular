@@ -1,5 +1,6 @@
 /* Container Grid */
 .container {
+  position: relative;
   padding: 0 10vw;
   --min: 30ch;
   --gap: 2rem;
@@ -22,11 +23,18 @@ mat-card {
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
 }
 
-/* Glitchy Image Pieces */
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
+@-webkit-keyframes wiggle {
+  0% { transform: skewX(24deg); }
+  10% { transform: skewX(-8deg); }
+  20% { transform: skewX(55deg); }
+  30% { transform: skewX(-90deg); }
+  40% { transform: skewX(29deg); }
+  50% { transform: skewX(-90deg); }
+  60% { transform: skewX(3deg); }
+  70% { transform: skewX(-2deg); }
+  80% { transform: skewX(1deg); }
+  90% { transform: skewX(10deg); }
+  100% { transform: skewX(0deg); }
 }
 
 .layer {
@@ -39,45 +47,27 @@ mat-card {
   transition: transform 0.3s, opacity 0.3s;
 }
 
-.layer-1 {
-  z-index: 1;
-}
-
-.layer-2 {
-  z-index: 3;
-  opacity: 0.8;
-}
-
-.layer-3 {
-  z-index: 2;
-  opacity: 0.6;
-}
-
 /* Hover Effect */
-.card:hover .layer-1 {
-  transform: translate(30px, 50px);
+.card:hover .layer {
+  animation: wiggle 0.2s 2;
 }
 
-.card:hover .layer-2 {
-  transform: translate(15px, 5px) rotate(3deg);
-}
-
-.card:hover .layer-3 {
-  transform: translate(-5px, 10px) rotate(-5deg);
-}
-/* Title Styling (Initially Hidden) */
-mat-card-title {
+.tittle {
   position: absolute;
-  bottom: 50%;
-  left: 50%;
-  color: var(--cyan);
-  font-family: 'Courier New', Courier, monospace;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 2vw;
-  border-radius: 1vw;
-  font-size: 3vw;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 4;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for element's size */
+  padding: 5px 15px; /* Add padding for better spacing */
+  background: linear-gradient(90deg, var(--cyan), var(--light-cyan)); /* Gradient background */
+  color: #1a1a1a; /* Text color contrasting the background */
+  font-family: 'Arial', sans-serif; /* Font customization */
+  text-align: center; /* Center text inside the element */
+  border-radius: 8px; /* Rounded corners */
+  z-index: 6; /* Ensure it stays above other layers */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+.card:hover .tittle {
+  display: none;
 }

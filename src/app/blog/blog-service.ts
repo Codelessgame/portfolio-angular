@@ -11,16 +11,9 @@ import {HttpClient} from "@angular/common/http";
 export class BlogService {
   private readonly API_URL = 'http://127.0.0.1:5000/'; // Update with your API URL
 
-  // fetchdata(){
-  //   //   get the data => store them
-  //   fetch(this.API_URL).then(response => {console.log(response)})
-  //
-  //
-  // }
-  //
-  // // gets the apie
-  // constructor( private http: HttpClient) {
-  //   this.fetchdata();
+
+  // constructor() {
+  //   this.database_data = Fetch(this.API_URL)
   // }
 
 
@@ -82,10 +75,8 @@ export class BlogService {
         })
       )
   }
-
-
-
 }
+
 
 
 

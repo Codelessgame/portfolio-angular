@@ -4,7 +4,7 @@ import {MatToolbar} from "@angular/material/toolbar";
 import {MatAnchor, MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {MatButtonToggle} from "@angular/material/button-toggle";
-import {MatTabNav, MatTabNavPanel} from "@angular/material/tabs";
+import {StarComponent} from "./star/star.component";
 
 const letters = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYZŽ0123456789"
 
@@ -20,16 +20,15 @@ const letters = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYZŽ012345678
     RouterLink,
     MatButtonToggle,
     MatButton,
-    MatTabNav,
-    MatTabNavPanel
+    StarComponent,
   ],
   standalone: true
 })
-export class HeaderComponent implements OnChanges {
+export class HeaderComponent implements OnChanges  {
   @Input() value: string = ''
   currentValue = this.value
   interval: any
-
+  private star_number: number = 50
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('value')) {

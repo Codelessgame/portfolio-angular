@@ -1,0 +1,19 @@
+<!--<div class="sky">-->
+<!--  @for (data of star_data; track data.id){-->
+<!--      <div  class="star" [ngStyle]=" data"></div>-->
+<!--  }-->
+<!--</div>-->
+
+    <div class="sky">
+      @for (data of star_data; track data.id){
+      <div
+        class="star"
+        [ngStyle]="{
+          '--fall-duration': data.duration + 's',
+          '--fall-delay': data.delay + 's',
+          '--star-tail-length': data.duration/2 + 'em',
+
+          '--top-offset': data.top + 'vw'
+        }"></div>
+      }
+    </div>
