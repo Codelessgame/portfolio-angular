@@ -1,15 +1,13 @@
 <div class="color padding">
   <h2 class="cyan">My Work</h2>
   <div class="container ">
-
     @for (tile of tiles; track tile) {
       <a class="card" href="{{tile.link}}">
         <mat-card appearance="outlined">
           <h3 class="tittle">{{tile.title}} </h3>
           <div class="screen-overlay"></div>
           <div class="image-container">
-            <img class=" layer layer-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s" alt="Project 1 image">
-
+            <img class=" layer layer-1" src="{{tile.image_url}}" alt="Project 1 image">
           </div>
         </mat-card >
       </a>

@@ -1,17 +1,21 @@
-@for (tile of tiles; track tile) {
+@for (tile of tiles; track tile.id) {
     <div *ngIf="tile.side=='left'" class=" color padding">
       <h2 class="cyan">{{ tile.title }}</h2>
       <div  class="smol-css-grid " >
-          <img class="image" mat-card-image [src]="tile.image">
+          <mat-card>
+            <img class="image" mat-card-image [src]="tile.image">
+          </mat-card>
           <p>{{tile.text}}</p>
       </div>
     </div>
 
-    <div *ngIf="tile.side=='left'" class=" color padding">
+    <div *ngIf="tile.side=='right'" class=" color padding">
       <h2 class="cyan">{{ tile.title }}</h2>
-      <div  class="smol-css-grid " >
+      <div  class="smol-css-grid">
         <p>{{tile.text}}</p>
-        <img class="image " mat-card-image [src]="tile.image">
+        <mat-card>
+          <img class="image" mat-card-image [src]="tile.image">
+        </mat-card>
       </div>
     </div>
 }

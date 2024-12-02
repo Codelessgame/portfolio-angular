@@ -9,7 +9,7 @@ import {NgStyle} from "@angular/common";
   standalone: true,
 })
 export class StarComponent{
-   star_number: number = 30;
+   star_number: number = 25;
    star_data: StarData[] = []
 
   constructor() {
@@ -18,10 +18,11 @@ export class StarComponent{
 
   generate_star_data(){
     for ( let i = 0; i < this.star_number+1; i++){
-      const top = Math.random() * 100; // Random vertical position
+      const top = Math.random() * 50; // Random vertical position
+      const left = Math.random() * 50; // Random vertical position
       // Randomize animation duration
-      const tail_length = 6 + Math.random() * 25
-      const duration = 2 + Math.random() * 5; // Between 2s and 5s
+      const tail_length = 8 + Math.random() * 25
+      const duration = 3 + Math.random() * 10; // Between 2s and 5s
       const delay = Math.random() * 5; // Random delay for staggered starts
 
       // push the data

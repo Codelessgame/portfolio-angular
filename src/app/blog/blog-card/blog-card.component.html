@@ -16,9 +16,8 @@
         <mat-card *ngFor="let postData of posts$ | async" appearance="outlined">
           <mat-card-header>
             <mat-card-title ><a href="/" class="cyan">{{ postData.title }}</a></mat-card-title>
-            <mat-card-subtitle *ngIf="postData.subtitle =='hi' ">{{ postData.subtitle }}</mat-card-subtitle>
           </mat-card-header>
-           <img mat-card-image [src]="postData.image " [alt]="'failed to load' + postData.title">
+           <img mat-card-image class="image" src="{{postData.image}}" alt="null">
           <mat-card-content>
             <mat-chip-set class="card-footer">
               @for (tag of postData.tags; track tag) {

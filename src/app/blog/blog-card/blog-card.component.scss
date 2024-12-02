@@ -42,13 +42,13 @@
 }
 
 /* Mat Chip Styling */
-mat-chip {
+.chip {
   padding: 0.5vh;
   display: inline-flex;
 }
 
 
-mat-chip[removed] {
+.chip[removed] {
   text-decoration: line-through;
   opacity: 0.6;
 }
@@ -59,7 +59,13 @@ mat-chip[removed] {
     justify-content: center; /* Center-align chips on smaller screens */
   }
 
-  mat-chip {
+  .chip {
     font-size: 0.75rem; /* Smaller chips for small screens */
   }
+}
+
+.image{
+  aspect-ratio: 13/11 ;
+  padding: 7px 0;
+
 }

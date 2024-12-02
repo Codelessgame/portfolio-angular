@@ -35,8 +35,11 @@ import {NgIf} from "@angular/common";
 
 export class TwoCollumComponent {
   tiles: TilesData[] = [
-    {id: 1, side: 'left', title:"TITLE", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dapibus leo. Nam nec orci semper, auctor dui nec, finibus augue. Integer ac pellentesque arcu, sed finibus libero. Nullam euismod dui nec imperdiet fringilla. Quisque rhoncus lorem at velit vehicula elementum. Quisque a dictum quam, quis tincidunt felis. Morbi pulvinar nisl id euismod egestas. Praesent metus enim, venenatis at erat vel, mollis facilisis lectus. Fusce vulputate non dui ut venenatis. Nunc a tortor mi. Phasellus posuere orci quis mauris varius, ac scelerisque nunc vehicula.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s\""},
-    {id: 1, side: 'right', title:"TITLE", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu dapibus leo. Nam nec orci semper, auctor dui nec, finibus augue. Integer ac pellentesque arcu, sed finibus libero. Nullam euismod dui nec imperdiet fringilla. Quisque rhoncus lorem at velit vehicula elementum. Quisque a dictum quam, quis tincidunt felis. Morbi pulvinar nisl id euismod egestas. Praesent metus enim, venenatis at erat vel, mollis facilisis lectus. Fusce vulputate non dui ut venenatis. Nunc a tortor mi. Phasellus posuere orci quis mauris varius, ac scelerisque nunc vehicula.", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s\""}
+    {id: 1, side: 'left', title:"About me", text: "Hi I am Stanislav, I am a high school student at the Gymnázium a Střední odborná škola Rokycany, where i am studying IBDP. In my free-time I like to program and make stuff for and print on my 3D printer, basically engineering in general. \n" +
+        "\n" + "I love to make engineering projects a while when I got into engineering I started by making trying to make remote controlled car, I made the chassis design, and failed, after being printed it did not fit together. So I made a 2nd, 3rd, 4th version then I got stuck on making circuits, I got over that, the only that stopped me was a motor that wasn´t powerful enough to propel the wheels. \n",
+      image: "/assets/me_photo.jpg"},
+    {id: 2, side: 'right', title:"Under Construction", text: "Lorem ipsum----> Brainstorming is a creative process that allows ideas to flow freely and generate innovative solutions. In a collaborative setting, individuals share their thoughts without fear of judgment, fostering an environment of open communication. The objective is to explore as many perspectives as possible, encouraging out-of-the-box thinking and unconventional approaches.",
+      image: "/assets/brainstorm.jpg"}
 
   ]
 
@@ -46,7 +49,6 @@ export class TwoCollumComponent {
 export interface TilesData {
   title: string;
   side: 'left' | 'right' ;
-
   id: number
   text:string
   image:string

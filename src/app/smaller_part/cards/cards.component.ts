@@ -19,14 +19,12 @@ import {MatGridList} from "@angular/material/grid-list";
 
 export class CardsComponent {
   tiles: TilesData[] = [
-    { title:"TITLE", link:"", image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s"},
-    { title:"TITLE", link:"", image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQITZOKvHwIUFq9f5Rm1YzlG3OegYM3YFLlVA&s"}
-
+    { title:"CODE", link:"https://github.com/Codelessgame?tab=repositories", image_url:"/assets/home/code_img.jpg"},
+    { title:"2D_ART", link:"https://photos.app.goo.gl/JHJo7ss2rh3L1vNi6", image_url:"/assets/home/art_img.jpg"},
+    { title:"3D_ART", link:"https://sketchfab.com/stanik.ruzicka/models", image_url:"/assets/home/3D_art.jpg"}
   ]
 
-
 }
-
 export interface TilesData {
   link: string;
   title: string;

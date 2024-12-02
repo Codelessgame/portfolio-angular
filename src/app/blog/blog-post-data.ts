@@ -9,7 +9,6 @@ export interface BlogPostData {
   tags: BlogTag[]
 
   title: string
-  subtitle: string
   content: string
-  image?: string
+  image: string
 }
