@@ -9,7 +9,7 @@ import {NgStyle} from "@angular/common";
   standalone: true,
 })
 export class StarComponent{
-   star_number: number = 25;
+   star_number: number = 15;
    star_data: StarData[] = []
 
   constructor() {
