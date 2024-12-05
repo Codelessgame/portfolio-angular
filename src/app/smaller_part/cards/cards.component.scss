@@ -23,7 +23,7 @@ mat-card {
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
 }
 
-@-webkit-keyframes wiggle {
+@-webkit-keyframes wiggle-2 {
   0% { transform: skewX(24deg); }
   10% { transform: skewX(-8deg); }
   20% { transform: skewX(55deg); }
@@ -35,6 +35,15 @@ mat-card {
   80% { transform: skewX(1deg); }
   90% { transform: skewX(10deg); }
   100% { transform: skewX(0deg); }
+}
+
+@-webkit-keyframes wiggle {
+  0% { transform: skewX(24deg); }
+  20% { transform: skewX(-8deg); }
+  40% { transform: skewX(55deg); }
+  60% { transform: skewX(-90deg); }
+  80% { transform: skewX(29deg); }
+  100% { transform: skewX(-90deg); }
 }
 
 .layer {
