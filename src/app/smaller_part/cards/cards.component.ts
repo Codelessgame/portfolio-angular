@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatCard, MatCardContent, MatCardFooter, MatCardImage, MatCardTitle} from "@angular/material/card";
 import {MatGridList} from "@angular/material/grid-list";
 
@@ -24,9 +24,13 @@ export class CardsComponent {
     { title:"3D_ART", link:"https://sketchfab.com/stanik.ruzicka/models", image_url:"/assets/home/3D_art.jpg"}
   ]
 
+
+
+  getAverage_color(){}
 }
 export interface TilesData {
   link: string;
   title: string;
   image_url:string
+  averageColor?: string;
 }

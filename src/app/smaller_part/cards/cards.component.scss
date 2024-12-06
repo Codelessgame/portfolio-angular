@@ -1,20 +1,8 @@
-/* Container Grid */
-.container {
-  position: relative;
-  padding: 0 10vw;
-  --min: 30ch;
-  --gap: 2rem;
-  display: grid;
-  grid-gap: var(--gap);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-}
-
 /* Card Styling */
 mat-card {
   overflow: hidden;
   aspect-ratio: 10 / 12;
   position: relative;
-  background: #1a1a1a;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -23,13 +11,13 @@ mat-card {
   box-shadow: 0 4px 20px rgba(0, 255, 255, 0.4);
 }
 
-@-webkit-keyframes wiggle-2 {
+//not in use
+@-webkit-keyframes wiggle {
   0% { transform: skewX(24deg); }
   10% { transform: skewX(-8deg); }
-  20% { transform: skewX(55deg); }
-  30% { transform: skewX(-90deg); }
+  20% { transform: skewX(45deg); }
+  30% { transform: skewX(-30deg); }
   40% { transform: skewX(29deg); }
-  50% { transform: skewX(-90deg); }
   60% { transform: skewX(3deg); }
   70% { transform: skewX(-2deg); }
   80% { transform: skewX(1deg); }
@@ -37,13 +25,19 @@ mat-card {
   100% { transform: skewX(0deg); }
 }
 
-@-webkit-keyframes wiggle {
-  0% { transform: skewX(24deg); }
-  20% { transform: skewX(-8deg); }
-  40% { transform: skewX(55deg); }
-  60% { transform: skewX(-90deg); }
-  80% { transform: skewX(29deg); }
-  100% { transform: skewX(-90deg); }
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(-3px, 3px);
+  }
+  66% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 
 .layer {
@@ -57,20 +51,19 @@ mat-card {
 }
 
 /* Hover Effect */
-.card:hover .layer {
-  animation: wiggle 0.1s 2;
+.card:hover {
+  animation: glitch 0.08s 2;
 }
 
 .tittle {
   position: absolute;
+  justify-self: center;
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Adjust for element's size */
   padding: 5px 15px; /* Add padding for better spacing */
   background: linear-gradient(90deg, var(--cyan), var(--light-cyan)); /* Gradient background */
   color: #1a1a1a; /* Text color contrasting the background */
-  font-family: 'Arial', sans-serif; /* Font customization */
-  text-align: center; /* Center text inside the element */
   border-radius: 8px; /* Rounded corners */
   z-index: 6; /* Ensure it stays above other layers */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */

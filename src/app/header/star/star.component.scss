@@ -3,7 +3,6 @@
   left: 0;
   width: 98vw;
   position: absolute;
-
   overflow: hidden;
 }
 
@@ -13,13 +12,11 @@
   top: 0;
   left: 1vw;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   transform: rotate(-10deg);
 }
 
 .star {
-  --star-color: rgba(197, 54, 193, 0.69);
-  --star-tail-length: 6em;
   --star-tail-height: 2px;
   --star-width: calc(var(--star-tail-length) / 6);
   --fall-duration: 9s;

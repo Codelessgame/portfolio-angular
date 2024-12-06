@@ -15,12 +15,11 @@ mat-toolbar {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   overflow: hidden;
   background-color: var(--mat-app-background-color); /* Dark background */
   color: var(--cyan, #00ffff); /* Default fallback for cyan */
-  text-align: center;
 
 
 }

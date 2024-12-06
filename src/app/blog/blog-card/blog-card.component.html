@@ -3,8 +3,8 @@
   <div *ngIf="selection.length > 0" class="flex">
     <h1 class="cyan">Sorted by: </h1>
     <div class="chips-wrapper">
-      <div class="chip-wrapper" *ngFor="let tag of selection" (click)="toggleTagged(tag)">
-        <mat-chip class="chip" (removed)="toggleTagged(tag)">
+      <div *ngFor="let tag of selection" (click)="toggleTagged(tag)">
+        <mat-chip (removed)="toggleTagged(tag)">
           {{ tag }}
         </mat-chip>
       </div>
@@ -17,9 +17,9 @@
           <mat-card-header>
             <mat-card-title ><a href="/" class="cyan">{{ postData.title }}</a></mat-card-title>
           </mat-card-header>
-           <img mat-card-image class="image" src="{{postData.image}}" alt="null">
+           <img mat-card-image class="image" src="{{postData.image}}" alt="{{postData.title}}">
           <mat-card-content>
-            <mat-chip-set class="card-footer">
+            <mat-chip-set >
               @for (tag of postData.tags; track tag) {
                 <mat-chip  (click)="toggleTagged( tag)">{{tag}}</mat-chip>
               }

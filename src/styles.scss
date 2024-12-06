@@ -10,10 +10,30 @@ $theme: mat.define-theme(
     )
 );
 
+.container {
+
+  --min: 30ch;
+  --gap: 2rem;
+
+  display: grid;
+  grid-gap: var(--gap);
+  /* min() with 100% prevents overflow
+  in extra narrow spaces */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+.center{
+  justify-self: center;
+  justify-content: center;
+
+}
+
+
 :root{
   //should be done through angular material
   --cyan: #1bc198;
   --light-cyan: rgb(98, 202, 185);
+  --star-color: rgba(197, 54, 193, 0.69);
 }
 
 
