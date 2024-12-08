@@ -11,7 +11,7 @@ import {HttpClient} from "@angular/common/http";
     CardsComponent,
     MatGridList,
     MatGridTile,
-    TwoCollumComponent
+    TwoCollumComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

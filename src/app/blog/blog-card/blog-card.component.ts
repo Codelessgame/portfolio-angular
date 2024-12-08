@@ -11,7 +11,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatChip, MatChipGrid, MatChipRow, MatChipSet} from "@angular/material/chips";
 import {MatButton} from "@angular/material/button";
 import {MatGridList, MatGridTile} from "@angular/material/grid-list";
-import {BlogTag} from "../blog-tag";
 import {MatIcon} from "@angular/material/icon";
 
 
@@ -44,7 +43,7 @@ export class BlogCardComponent {
     return this.blogService.selectedPosts$;
   }
 
-  get selection$(): Observable<readonly BlogTag[]> {
+  get selection$(): Observable<readonly string[]> {
     return this.blogService.selection$;
   }
 
@@ -52,7 +51,7 @@ export class BlogCardComponent {
     private blogService: BlogService
   ) { }
 
-  toggleTagged( tag: BlogTag): void {
+  toggleTagged( tag: string): void {
     this.blogService.toggleSelectionTag(tag);
   }
 

@@ -44,8 +44,6 @@ $theme: mat.define-theme(
 
 .color{
   background: var(--mat-app-background-color);
-
-
 }
 
 .padding{
@@ -61,8 +59,6 @@ html, body {
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
-
-
   @include mat.all-component-themes($theme);
 }
 
