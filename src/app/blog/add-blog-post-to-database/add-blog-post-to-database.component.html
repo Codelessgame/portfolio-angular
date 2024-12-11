@@ -4,18 +4,16 @@
       <mat-card-title>Blog builder</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-
-
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
-            <input matInput placeholder="title" formControlName="title">
+            <input formControlName="title" matInput placeholder="title">
           </mat-form-field>
         </div>
 
         <div class="col">
           <mat-form-field class="full-width">
-            <input type="date" matInput placeholder="title" formControlName="title">
+            <input type="date" matInput placeholder="data" formControlName="date">
           </mat-form-field>
         </div>
       </div>
@@ -26,34 +24,21 @@
             <input formControlName="content" matInput placeholder="content">
           </mat-form-field>
         </div>
-      </div>
-
-      <div class="row">
         <div class="col">
-          @if (hasUnitNumber) {
               <input type="file" class="file-upload">
-          }
-          @else {
-            <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
-             + add image
-            </button>
-          }
         </div>
       </div>
-
-
       <div class="row">
         <div class="col">
-          <mat-radio-group formControlName="image_position">
-          <mat-radio-button value="left">Left</mat-radio-button>
-            <mat-radio-button value="priority">right</mat-radio-button>
-          </mat-radio-group>
+          <mat-form-field class="full-width" #tag>
+            <input formControlName="tags" name="array[]" matInput placeholder="tags">
+          </mat-form-field>
+          <button (click)="createTag_input()" mat-raised-button> Add tag </button>
         </div>
       </div>
     </mat-card-content>
-
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button  mat-raised-button [disabled]="addressForm.invalid" color="primary" type="submit">Submit</button>
     </mat-card-actions>
   </mat-card>
 </form>

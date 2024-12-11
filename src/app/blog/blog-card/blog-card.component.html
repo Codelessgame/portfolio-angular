@@ -12,12 +12,12 @@
   </div>
 
 <!--  this is the blog cars listing, from here filter event called-->
-  <div *ngIf=" posts$ | async; let post" class="container">
+  <div *ngIf=" posts$ | async;" class="container">
         <mat-card *ngFor="let postData of posts$ | async" appearance="outlined">
           <mat-card-header>
             <mat-card-title ><a href="/" class="cyan">{{ postData.title }}</a></mat-card-title>
           </mat-card-header>
-           <img mat-card-image class="image" src="{{postData.image}}" alt="{{postData.title}}">
+           <img mat-card-image class="image" [src]="postData.image" alt="{{postData.title}}"  >
           <mat-card-content>
             <mat-chip-set >
               @for (tag of postData.tags; track tag) {
