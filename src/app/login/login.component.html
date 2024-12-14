@@ -1,0 +1,35 @@
+
+
+
+<mat-card class="padding">
+  @if (errorMessage) {
+    <div>{{ errorMessage }}</div>
+  }
+@if (userService.currentUserSig() == null ){
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+  <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+          <mat-form-field>
+          <input matInput type="text" placeholder="Email" formControlName="email" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password" />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button type="submit">Sign In</button>
+        </div>
+        </form>
+  </mat-card-content>
+}
+
+
+@if(userService.currentUserSig() ) {
+  <button mat-raised-button (click)="logout()" > logout </button>
+}
+</mat-card>
