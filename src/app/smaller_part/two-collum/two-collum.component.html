@@ -3,7 +3,7 @@
       <h2 class="cyan">{{ tile.title }}</h2>
       <div  class="smol-css-grid " >
           <mat-card>
-            <img class="image" mat-card-image [src]="tile.image">
+            <img class="image" mat-card-image src="{{tile.image}}">
           </mat-card>
           <p>{{tile.text}}</p>
       </div>
@@ -14,7 +14,7 @@
       <div  class="smol-css-grid">
         <p>{{tile.text}}</p>
         <mat-card>
-          <img class="image" mat-card-image [src]="tile.image">
+          <img class="image" mat-card-image src="{{tile.image}}">
         </mat-card>
       </div>
     </div>
