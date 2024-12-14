@@ -17,7 +17,6 @@ export class BlogService {
     });
   }
 
-
   // Holds the current list of blog posts and allows updates.
   private postsSubject: BehaviorSubject<BlogPostData[]> = new BehaviorSubject<BlogPostData[]>([])
 
