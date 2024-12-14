@@ -8,16 +8,17 @@ import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage
 @Injectable({providedIn:'root'})
 export class BlogFirebaseService{
 
+
+
   firestore = inject(Firestore)
   blogCollection = collection(this.firestore, 'blog_data')
   storage = inject(Storage)
+
 
   async addImage(filePath:string, image:File ){
     const fileRef = ref(this.storage, filePath)
     await uploadBytes(fileRef, image)
     return await getDownloadURL(fileRef)
-
-
   }
 
    getBlogData(): Observable<BlogPostData[]>{

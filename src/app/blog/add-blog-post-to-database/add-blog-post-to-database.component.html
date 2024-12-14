@@ -1,8 +1,10 @@
+<!--<div *ngIf="userService."></div>-->
 <div class="padding color"><form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-  <mat-card class="shipping-card">
+  <mat-card>
     <mat-card-header>
       <mat-card-title>Blog builder</mat-card-title>
     </mat-card-header>
+
     <mat-card-content>
       <div class="row">
         <div class="col">
@@ -25,18 +27,37 @@
           </mat-form-field>
         </div>
         <div class="col">
-              <input type="file" class="file-upload">
+              <input type="file" (change)="onFileSelected($event)"  >
         </div>
       </div>
+
       <div class="row">
         <div class="col">
-          <mat-form-field class="full-width" #tag>
-            <input formControlName="tags" name="array[]" matInput placeholder="tags">
+          <mat-form-field  class="full-width">
+            <input (keydown.control)="addTag(tagInput.value); tagInput.value= '';"#tagInput matInput placeholder="add a tag">
           </mat-form-field>
-          <button (click)="createTag_input()" mat-raised-button> Add tag </button>
+        </div>
+        <div class="col">
+          <button type="button" mat-raised-button (click)="addTag(tagInput.value); tagInput.value = '';">
+            Add Tag
+          </button>
         </div>
       </div>
+
+      <div class="row">
+        <mat-chip-set>
+          @for(tag of tags.controls; let i = $index; track i){
+          <mat-chip class="">{{tag.value}}
+            <button mat-icon-button (click)="removeTag(i)">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          }
+        </mat-chip-set>
+      </div>
+
     </mat-card-content>
+
     <mat-card-actions>
       <button  mat-raised-button [disabled]="addressForm.invalid" color="primary" type="submit">Submit</button>
     </mat-card-actions>

@@ -14,14 +14,10 @@ export class BlogService {
     // Subscribe to the Observable and update the BehaviorSubject
     this.blogService.getBlogData().subscribe(posts => {
       this.postsSubject.next(posts);
-      // todo problem here
-      this.posts$.subscribe(posts => console.log('Posts:', posts));
     });
   }
 
 
-  //*todo this could be the problem
-  //*todo empty at first but the constructor adds the data after getting it from database
   // Holds the current list of blog posts and allows updates.
   private postsSubject: BehaviorSubject<BlogPostData[]> = new BehaviorSubject<BlogPostData[]>([])
 

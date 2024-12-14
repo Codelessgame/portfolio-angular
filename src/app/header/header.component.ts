@@ -1,10 +1,12 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, inject, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {MatListItem, MatNavList} from "@angular/material/list";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatAnchor, MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {MatButtonToggle} from "@angular/material/button-toggle";
 import {StarComponent} from "./star/star.component";
+import {user} from "@angular/fire/auth";
+import {UserService} from "../user.service";
 
 const letters = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYZŽ0123456789"
 
@@ -25,6 +27,7 @@ const letters = "AÁBCČDĎEÉĚFGHIÍJKLMNŇOÓPQRŘSŠTŤUÚŮVWXYZŽ012345678
   standalone: true
 })
 export class HeaderComponent implements OnChanges  {
+  userService = inject(UserService)
   @Input() value: string = ''
   currentValue = this.value
   interval: any
@@ -60,4 +63,5 @@ export class HeaderComponent implements OnChanges  {
     }, 30)
   }
 
+  protected readonly user = user;
 }

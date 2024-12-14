@@ -1,18 +1,16 @@
-import { Component, inject } from '@angular/core';
-
-import {ReactiveFormsModule, FormBuilder, Validators, FormGroup} from '@angular/forms';
+import {Component, inject} from '@angular/core';
+import {ReactiveFormsModule, FormBuilder, Validators, FormGroup, Form, FormArray} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import {BlogFirebaseService} from "../../firebase";
-import {BlogPostData} from "../blog-post-data";
-import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage';
-import {object} from "@angular/fire/database";
-import {finalize} from "rxjs";
-import {query} from "@angular/animations";
-import {getHtmlHeadTagElement} from "@angular/cdk/schematics";
+import {MatIcon} from "@angular/material/icon";
+import {MatChip, MatChipListbox, MatChipOption, MatChipSet} from "@angular/material/chips";
+import {AsyncPipe} from "@angular/common";
+import {user} from "@angular/fire/auth";
+
 
 @Component({
   selector: 'app-add-blog-post-to-database',
@@ -25,40 +23,70 @@ import {getHtmlHeadTagElement} from "@angular/cdk/schematics";
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIcon,
+    MatChipListbox,
+    MatChip,
+    MatChipSet,
+    MatChipOption,
+    AsyncPipe
   ]
 })
 
 export class AddBlogPostToDatabaseComponent {
-  constructor() {
-  }
-
   fb = inject(FormBuilder)
   blogService = inject(BlogFirebaseService)
+
 
   addressForm = this.fb.group({
     title: ['', Validators.required],
     content: ['', Validators.required],
     date: ['', Validators.required],
-    image: [object, Validators.required],
-    // todo implement tags
-    tags: [[null]],
+    image: ['', Validators.required],
+    tags: this.fb.array([]),
   });
+
 
   async onSubmit(): Promise<void> {
     if (this.addressForm.valid) {
-      const data = this.addressForm.value;
-      const filePath = `blog-images/${data.title}_${Date.now()}`;
-      // this adds image and returns reference url
-
-      data.image = await this.blogService.addImage(filePath, data.image)
-      // Add the blog data to the service
-      console.log("submitted data:" ,data)
-      // todo the image is undefined in storage why?
+      const data =this.addressForm.value;
+      // Adds the blog data to the database
       this.blogService.addBlogData(data);
     }
   }
 
-  createTag_input(){
+  get tags(): FormArray{
+    return this.addressForm.get('tags') as FormArray;
   }
+
+  addTag(tag:string): void {
+    if (tag) {
+      this.tags.push(this.fb.control(tag));
+    }
+  }
+
+  removeTag(index:number){
+    this.tags.removeAt(index);
+  }
+
+  // puts image download url to Formdata.image
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+
+    if (input.files && input.files.length > 0) {
+      const file: File = input.files[0];
+      console.log(file)
+      const filePath = `blog-images/${file.name}_${Date.now()}`;
+
+      // Call the addImage function
+      this.blogService.addImage(filePath, file).then((downloadUrl) => {
+        // Update the form control with the image URL
+        this.addressForm.patchValue({ image: downloadUrl });
+      }).catch((error) => {
+        console.error('Error uploading image:', error);
+      });
+    }
+  }
+
+  protected readonly user = user;
 }

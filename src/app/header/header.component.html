@@ -2,7 +2,10 @@
 <mat-toolbar class="sticky" >
   <button mat-button routerLink="">Home</button>
   <button mat-button routerLink="blog">Blog</button>
-  <button class="end" mat-button routerLink="login">Login</button>
+  <button mat-button routerLink="login">Login</button>
+  @if (userService.currentUserSig() != null){
+  <button mat-button  routerLink="blog-builder" >Blog Builder </button>
+  }
 </mat-toolbar>
 
 <div class="nav">

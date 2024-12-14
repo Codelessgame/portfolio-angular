@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {HomeComponent} from "./home/home.component";
+import {UserService} from "./user.service";
+import {user} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,9 @@ import {HomeComponent} from "./home/home.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent{
   title = 'portfolio-angular';
+
+
+
 }
