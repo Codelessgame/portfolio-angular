@@ -1,0 +1,15 @@
+<div  class=" color padding">
+  <h2 class="cyan"> {{title}}</h2>
+  <div  class="smol-css-grid " >
+    <mat-card *ngIf="side=='left'">
+      <img class="image" mat-card-image src="{{image}}">
+    </mat-card>
+    <div>
+      <ng-content ></ng-content>
+    </div>
+    <mat-card *ngIf="side=='right'">
+      <img class="image" mat-card-image src="{{image}}">
+    </mat-card>
+  </div>
+</div>
+

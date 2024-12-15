@@ -1,4 +1,39 @@
 <div>
-  <app-two-collum></app-two-collum>
+  <app-two-collum-styleable side="right" title="About me">
+    <ng-container >
+      <p>Hi I am Stanislav, I am a high school student at the Gymnázium a
+        Střední odborná škola Rokycany<a href="https://www.gasos-ro.cz/cs/" >¹</a>, where i am studying IBDP<a href="https://en.wikipedia.org/wiki/IB_Diploma_Programme">²</a>.
+      </p>
+      <p>
+        In my free-time I like to program and make stuff for and print on my 3D printer, engineering in general.
+
+        <br>
+        <br> In 2023 I got into engineering when I started by learning a CAD<a href="https://en.wikipedia.org/wiki/Computer-aided_design">³</a>
+        and tried to make a remote controlled car, I made the chassis design<a></a> ...
+        <br> The 1st<a href="https://a360.co/3OXdhYZ">⁴</a> version had some issues, so I made a 2nd<a href="https://a360.co/3VHXgKf">⁵</a> and 3rd<a href="https://a360.co/4dS7IWE">⁶</a> version that fixed them.
+        <br>Then I got stuck on making circuits, I got over that, and made a circuit, although sloppy, that worked.
+        <br> The only thing that stopped me then was a motor that wasn´t powerful enough to turn the wheels.
+      </p>
+       </ng-container>
+  </app-two-collum-styleable>
   <app-cards></app-cards>
+
+  <app-two-collum-styleable side="left" title="About this site" image="assets/firbase_collage.png">
+    <ng-container>
+      <p>This site was made as a passion project, the purpose of it was to learn how to interact with a database in my projects.
+        <br>This has been achieved as the blog part of this website downloads the data from google firebase, the images are stored in a cloud storage and only links are stored in the main database.
+        <p>Another part was creating a way to add content to the database from this very site if you go <a routerLink="/blog-builder" >here</a> you can see the part of the website that lets authenticated user write into the database.
+        <p> The site was build using Angular CLI.
+      </p>
+    </ng-container>
+  </app-two-collum-styleable>
+  <app-two-collum-styleable side="right" title="Inspired by" image="assets/collage_inspiration.png">
+    <ng-container>
+      <p>The hover effect on the landing view inspired by <a href="https://codepen.io/Hyperplexed/pen/rNrJgrd">Hyperplexed</a>
+        <br><a href="https://material.angular.io/">Angular material</a> was used for most buttons and the cards in the blog section
+        <p> The site is supposed to give programing and artistic wibes as those are thing I like.
+         The site is fully functioning <a class="small">except some graphical issues </a>
+      </p>
+    </ng-container>
+  </app-two-collum-styleable>
 </div>
